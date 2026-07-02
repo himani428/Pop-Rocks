@@ -1,0 +1,63 @@
+.services {
+  position: relative;
+}
+.services .eyebrow {
+  color: var(--pop-cyan);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.service-card {
+  background: var(--ink-soft);
+  border: 1px solid var(--line-on-ink);
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--pop-pink);
+}
+.service-card svg {
+  color: var(--pop-yellow);
+}
+.service-card h3 {
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--text-on-ink);
+}
+.service-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-on-ink-dim);
+  flex: 1;
+}
+.service-cta {
+  align-self: flex-start;
+  color: var(--pop-cyan);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.services-footer {
+  margin-top: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-top: 1px solid var(--line-on-ink);
+  padding-top: 32px;
+}
+.services-footer p {
+  color: var(--text-on-ink-dim);
+  max-width: 460px;
+}

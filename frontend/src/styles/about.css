@@ -1,0 +1,83 @@
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 64px;
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.about-photo {
+  position: relative;
+}
+.about-photo img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  border: 3px solid var(--ink);
+}
+.about-photo-tag {
+  position: absolute;
+  bottom: -18px;
+  right: -18px;
+  background: var(--pop-cyan);
+  border: 3px solid var(--ink);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  transform: rotate(-3deg);
+  box-shadow: 6px 6px 0 var(--ink);
+}
+@media (max-width: 500px) {
+  .about-photo-tag {
+    right: 0;
+  }
+}
+
+.about-eyebrow {
+  color: var(--pop-pink-dim);
+}
+
+.about-copy h2 {
+  font-size: clamp(34px, 4.4vw, 52px);
+  margin: 14px 0 20px;
+}
+
+.about-lead {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--text-on-cream-dim);
+  max-width: 620px;
+}
+
+.about-pillars {
+  margin-top: 40px;
+  display: grid;
+  gap: 24px;
+}
+.about-pillar {
+  border-top: 2px solid var(--line-on-cream);
+  padding-top: 16px;
+}
+.about-pillar h3 {
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 17px;
+  margin-bottom: 6px;
+}
+.about-pillar p {
+  color: var(--text-on-cream-dim);
+  font-size: 15px;
+  line-height: 1.6;
+}

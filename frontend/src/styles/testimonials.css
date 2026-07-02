@@ -1,0 +1,50 @@
+.pass-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
+
+.pass-card {
+  background: #fff;
+  border: 3px solid var(--ink);
+  border-radius: var(--radius-md);
+  padding: 40px 24px 24px;
+  position: relative;
+  box-shadow: 6px 6px 0 var(--pop-cyan);
+}
+.pass-hole {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 44px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--cream);
+  border: 2px solid var(--ink);
+}
+.pass-quote {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-on-cream);
+  min-height: 100px;
+}
+.pass-footer {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 2px dashed var(--line-on-cream);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.pass-name {
+  font-weight: 800;
+  font-size: 14px;
+}
+.pass-role {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--pop-pink-dim);
+}

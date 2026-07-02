@@ -1,0 +1,70 @@
+.trainers {
+  background: var(--cream-dim);
+}
+
+.trainers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+.trainer-card {
+  display: flex;
+  gap: 22px;
+  background: #fff;
+  border: 3px solid var(--ink);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: 6px 6px 0 var(--pop-pink);
+}
+@media (max-width: 480px) {
+  .trainer-card {
+    flex-direction: column;
+  }
+}
+
+.trainer-photo {
+  width: 108px;
+  height: 108px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--ink);
+}
+.trainer-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.trainer-info {
+  min-width: 0;
+}
+.trainer-role {
+  color: var(--pop-pink-dim);
+}
+.trainer-info h3 {
+  font-size: 24px;
+  margin: 8px 0 4px;
+}
+.trainer-experience {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--pop-cyan);
+  background: var(--ink);
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+.trainer-trained {
+  font-size: 13px;
+  color: var(--text-on-cream-dim);
+  margin-bottom: 10px;
+  font-style: italic;
+}
+.trainer-bio {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-on-cream);
+}

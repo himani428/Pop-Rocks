@@ -1,0 +1,218 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.topbar {
+  background: var(--ink);
+  color: var(--text-on-ink-dim);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 24px;
+  gap: 12px;
+}
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.topbar-sep {
+  opacity: 0.5;
+}
+.topbar-link {
+  color: var(--text-on-ink-dim);
+  transition: color 0.15s ease;
+}
+.topbar-link:hover {
+  color: var(--pop-yellow);
+}
+.topbar-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0;
+}
+.topbar-right {
+  display: none;
+}
+@media (min-width: 640px) {
+  .topbar-right {
+    display: block;
+  }
+}
+
+.mainnav {
+  background: var(--cream);
+  border-bottom: 3px solid var(--ink);
+}
+.mainnav-inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 14px 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--pop-pink);
+  color: var(--text-on-ink);
+  font-family: var(--font-display);
+  font-size: 17px;
+  border-radius: 10px;
+  border: 2px solid var(--ink);
+  transform: rotate(-6deg);
+}
+.brand-name {
+  font-family: var(--font-display);
+  font-size: 15px;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  color: var(--text-on-cream);
+}
+.brand-name em {
+  font-style: normal;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-on-cream-dim);
+}
+
+.nav-links {
+  display: none;
+  align-items: center;
+  gap: 22px;
+  margin-left: 8px;
+}
+.nav-link {
+  font-weight: 700;
+  font-size: 14px;
+  position: relative;
+  padding: 4px 0;
+}
+.nav-link:hover {
+  color: var(--pop-pink-dim);
+}
+.nav-links-mobile-auth {
+  display: none;
+}
+
+.nav-cta {
+  display: none;
+  margin-left: auto;
+  padding: 11px 22px;
+  font-size: 14px;
+}
+
+.hamburger {
+  margin-left: auto;
+  background: none;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  width: 42px;
+  height: 38px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+}
+.hamburger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--ink);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.hamburger.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (min-width: 960px) {
+  .nav-links {
+    display: flex;
+  }
+  .nav-cta {
+    display: inline-flex;
+  }
+  .hamburger {
+    display: none;
+  }
+  .nav-links-mobile-auth {
+    display: none !important;
+  }
+}
+
+@media (max-width: 959px) {
+  .nav-links {
+    position: fixed;
+    inset: 0 0 0 auto;
+    top: 0;
+    height: 100vh;
+    width: min(320px, 82vw);
+    background: var(--ink);
+    color: var(--text-on-ink);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 96px 32px 32px;
+    gap: 22px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    margin-left: 0;
+  }
+  .nav-links.is-open {
+    display: flex;
+    transform: translateX(0);
+  }
+  .nav-link {
+    font-size: 20px;
+    color: var(--text-on-ink);
+  }
+  .nav-links-mobile-auth {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line-on-ink);
+    width: 100%;
+    font-family: var(--font-mono);
+    font-size: 14px;
+  }
+  .nav-links-mobile-auth button {
+    background: none;
+    border: none;
+    color: var(--pop-yellow);
+    text-align: left;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0;
+  }
+}

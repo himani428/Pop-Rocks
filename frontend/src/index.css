@@ -1,0 +1,229 @@
+/* ============================================================
+   POP ROCKS DANCE ACADEMY — design tokens
+   Theme: "backstage pass" — candy-pop palette (named for the
+   fizzing pop-rocks candy), poster typography, ticket-stub cards.
+   ============================================================ */
+
+:root {
+  /* Color */
+  --ink: #14121c;
+  --ink-soft: #1e1b29;
+  --ink-softer: #2a2438;
+  --cream: #faf3e6;
+  --cream-dim: #f1e8d8;
+  --pop-pink: #ff2e7e;
+  --pop-pink-dim: #d81f66;
+  --pop-yellow: #ffc93c;
+  --pop-cyan: #33e6c8;
+  --violet: #7b2ff7;
+  --text-on-ink: #f6f1e7;
+  --text-on-ink-dim: #b9b2c7;
+  --text-on-cream: #201c2b;
+  --text-on-cream-dim: #6b6478;
+  --line-on-ink: rgba(246, 241, 231, 0.16);
+  --line-on-cream: rgba(32, 28, 43, 0.14);
+
+  /* Type */
+  --font-display: "Anton", "Arial Narrow", sans-serif;
+  --font-body: "Manrope", -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+
+  /* Layout */
+  --page-max: 1240px;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+#root {
+  overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--text-on-cream);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+p {
+  margin: 0;
+}
+
+.container {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 15px;
+  padding: 13px 26px;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, color 0.18s ease;
+  white-space: nowrap;
+}
+.btn:active {
+  transform: translateY(1px) scale(0.98);
+}
+.btn-primary {
+  background: var(--pop-pink);
+  color: var(--text-on-ink);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.btn-primary:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--ink);
+}
+.btn-secondary {
+  background: transparent;
+  border-color: currentColor;
+  color: inherit;
+}
+.btn-secondary:hover {
+  background: currentColor;
+  color: var(--ink);
+}
+.btn-ghost {
+  background: transparent;
+  color: inherit;
+  padding: 8px 4px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.btn-block {
+  width: 100%;
+}
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-yellow {
+  background: var(--pop-yellow);
+  color: var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.btn-yellow:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+/* Focus visibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--pop-cyan);
+  outline-offset: 2px;
+}
+
+/* Section rhythm */
+.section {
+  padding: 96px 0;
+}
+@media (max-width: 720px) {
+  .section {
+    padding: 64px 0;
+  }
+}
+
+.section-head {
+  max-width: 640px;
+  margin-bottom: 48px;
+}
+.section-head .eyebrow {
+  display: block;
+  margin-bottom: 12px;
+}
+.section-head h2 {
+  font-size: clamp(36px, 5vw, 56px);
+}
+.section-head p {
+  margin-top: 16px;
+  font-size: 17px;
+  color: var(--text-on-cream-dim);
+  line-height: 1.6;
+}
+
+.on-ink {
+  background: var(--ink);
+  color: var(--text-on-ink);
+}
+.on-ink .section-head p {
+  color: var(--text-on-ink-dim);
+}
+
+::selection {
+  background: var(--pop-pink);
+  color: var(--text-on-ink);
+}

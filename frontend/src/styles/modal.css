@@ -1,0 +1,110 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 18, 28, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.modal-card {
+  background: var(--cream);
+  border-radius: var(--radius-lg);
+  border: 3px solid var(--ink);
+  box-shadow: 10px 10px 0 var(--pop-pink);
+  width: min(480px, 100%);
+  max-height: 88vh;
+  overflow-y: auto;
+}
+
+.modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 2px solid var(--line-on-cream);
+}
+.modal-head h3 {
+  font-size: 22px;
+}
+.modal-close {
+  background: none;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.modal-body {
+  padding: 24px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+.form-field label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-on-cream-dim);
+}
+.form-field input,
+.form-field select,
+.form-field textarea {
+  font-family: var(--font-body);
+  font-size: 15px;
+  padding: 11px 14px;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--line-on-cream);
+  background: #fff;
+  color: var(--text-on-cream);
+}
+.form-field textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: var(--pop-pink);
+  outline: none;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+@media (max-width: 420px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-error {
+  background: #ffe3ec;
+  border: 2px solid var(--pop-pink);
+  color: var(--pop-pink-dim);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+.form-success {
+  background: #e2fbf3;
+  border: 2px solid var(--pop-cyan);
+  color: #0a7d63;
+  padding: 14px;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  text-align: center;
+}
