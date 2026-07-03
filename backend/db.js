@@ -135,6 +135,15 @@ const DEFAULT_SERVICES = [
     icon: "sparkle"
   },
   {
+    id: "wedding-planning",
+    title: "Full Wedding Planning",
+    description:
+      "Planning the whole wedding, not just the dance floor? Our sister company, Pop Rocks Dance n Events, handles venues, decor, catering coordination and full event planning — alongside the choreography you already know us for.",
+    icon: "heart",
+    instagram: "https://www.instagram.com/p.r.events_7/",
+    instagramHandle: "@p.r.events_7"
+  },
+  {
     id: "birthday-events",
     title: "Birthdays & Private Parties",
     description:

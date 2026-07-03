@@ -1,5 +1,6 @@
 const express = require("express");
 const { readDb, writeDb } = require("../db");
+const { notifyOwner } = require("../mail");
 
 const router = express.Router();
 
@@ -20,6 +21,19 @@ router.post("/", (req, res) => {
   };
   db.messages.push(entry);
   writeDb(db);
+
+  notifyOwner({
+    subject: `New website message from ${name}`,
+    replyTo: email,
+    lines: [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Phone: ${phone || "-"}`,
+      "",
+      "Message:",
+      message
+    ]
+  });
 
   res.status(201).json({ success: true });
 });

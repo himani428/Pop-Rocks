@@ -40,6 +40,18 @@
   color: var(--text-on-ink-dim);
   flex: 1;
 }
+.service-instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--pop-cyan);
+  align-self: flex-start;
+}
+.service-instagram:hover {
+  color: var(--text-on-ink);
+}
 .service-cta {
   align-self: flex-start;
   color: var(--pop-cyan);

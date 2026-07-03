@@ -1,10 +1,12 @@
 const express = require("express");
 const { readDb, writeDb } = require("../db");
 const { requireAuth } = require("../middleware/auth");
+const { notifyOwner } = require("../mail");
 
 const router = express.Router();
 
-// Booking a choreography service (wedding/sangeet, birthday, corporate, workshop)
+// Booking a choreography service (wedding/sangeet, birthday, corporate, workshop,
+// or a wedding-planning enquiry for our sister company Pop Rocks Dance n Events)
 // Login is required so a customer can track their request from their dashboard.
 router.post("/", requireAuth, (req, res) => {
   const { serviceId, eventType, eventDate, location, guestCount, message } = req.body;
@@ -32,6 +34,24 @@ router.post("/", requireAuth, (req, res) => {
 
   db.bookings.push(booking);
   writeDb(db);
+
+  const user = db.users.find((u) => u.id === req.user.id);
+  notifyOwner({
+    subject: `New booking request — ${booking.serviceTitle}`,
+    replyTo: user?.email,
+    lines: [
+      `${user?.name || "Someone"} just requested a booking: ${booking.serviceTitle}.`,
+      "",
+      `Name: ${user?.name || "-"}`,
+      `Email: ${user?.email || "-"}`,
+      `Phone: ${user?.phone || "-"}`,
+      `Event type: ${booking.eventType}`,
+      `Event date: ${booking.eventDate}`,
+      `Location: ${booking.location || "-"}`,
+      `Dancers/guests involved: ${booking.guestCount || "-"}`,
+      `Message: ${booking.message || "-"}`
+    ]
+  });
 
   res.status(201).json({ booking });
 });

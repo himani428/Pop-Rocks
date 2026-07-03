@@ -28,6 +28,8 @@ export default function Footer() {
           <a href="https://www.instagram.com/poprocks_dance_academy/" target="_blank" rel="noreferrer">
             Instagram — @poprocks_dance_academy
           </a>
+          <a href="mailto:muskanwadhwani1324@gmail.com">muskanwadhwani1324@gmail.com</a>
+          <a href="tel:+918432341664">+91 84323 41664</a>
         </div>
 
         <div className="footer-col">

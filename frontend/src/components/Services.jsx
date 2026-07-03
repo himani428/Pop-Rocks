@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { PartyPopper, Sparkles, Briefcase, Mic2 } from "lucide-react";
+import { PartyPopper, Sparkles, Briefcase, Mic2, Heart, AtSign } from "lucide-react";
 import { api } from "../api/client";
 import { FALLBACK_SERVICES } from "../data/fallback";
 import BookEventModal from "./BookEventModal.jsx";
@@ -9,7 +9,8 @@ const ICONS = {
   sparkle: Sparkles,
   confetti: PartyPopper,
   briefcase: Briefcase,
-  mic: Mic2
+  mic: Mic2,
+  heart: Heart
 };
 
 export default function Services() {
@@ -43,6 +44,11 @@ export default function Services() {
                 <Icon size={28} strokeWidth={1.8} />
                 <h3>{s.title}</h3>
                 <p>{s.description}</p>
+                {s.instagram && (
+                  <a href={s.instagram} target="_blank" rel="noreferrer" className="service-instagram">
+                    <AtSign size={14} /> {s.instagramHandle}
+                  </a>
+                )}
                 <button className="btn-ghost service-cta" onClick={() => setSelected(s)}>
                   Request this →
                 </button>

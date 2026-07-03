@@ -1,6 +1,7 @@
 const express = require("express");
 const { readDb, writeDb } = require("../db");
 const { requireAuth } = require("../middleware/auth");
+const { notifyOwner } = require("../mail");
 
 const router = express.Router();
 
@@ -29,6 +30,21 @@ router.post("/", requireAuth, (req, res) => {
 
   db.enrollments.push(enrollment);
   writeDb(db);
+
+  const user = db.users.find((u) => u.id === req.user.id);
+  notifyOwner({
+    subject: `New enrollment — ${danceClass.title}`,
+    replyTo: user?.email,
+    lines: [
+      `${user?.name || "A student"} just enrolled in ${danceClass.title}.`,
+      "",
+      `Name: ${user?.name || "-"}`,
+      `Email: ${user?.email || "-"}`,
+      `Phone: ${user?.phone || "-"}`,
+      `Preferred batch: ${enrollment.preferredBatch}`,
+      `Notes: ${enrollment.notes || "-"}`
+    ]
+  });
 
   res.status(201).json({ enrollment });
 });

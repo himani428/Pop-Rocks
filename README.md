@@ -49,7 +49,38 @@ it appear under **Dashboard**.
 
 ---
 
-## 2. Project structure & how to edit content
+## 2. How the owner gets notified
+
+Every time someone **enrolls in a class**, **requests an event booking**, or **submits the
+contact form**, the backend emails the studio owner (`OWNER_EMAIL` in `backend/.env`) with the
+details. Every submission is also always saved and viewable in `backend/data/db.json` (or your
+future database) even if email isn't set up yet.
+
+To turn emails on, edit `backend/.env`:
+
+```bash
+OWNER_EMAIL=muskanwadhwani1324@gmail.com
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_SECURE=false
+SMTP_USER=your_gmail_address@gmail.com
+SMTP_PASS=your_16_character_app_password
+```
+
+**Getting a Gmail App Password (2 minutes):**
+1. Turn on 2-Step Verification on the Gmail account you want to send from: [myaccount.google.com/security](https://myaccount.google.com/security).
+2. Go to [myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords), create one (name it "Pop Rocks Website"), and copy the 16-character password.
+3. Paste it into `SMTP_PASS` above — `SMTP_USER` is the Gmail address itself, not the owner's email (they can be the same address, or different — `SMTP_USER` sends, `OWNER_EMAIL` receives).
+4. Restart the backend (`npm start`). Enroll in a class or submit the contact form to test — you should get an email within a few seconds.
+
+If `SMTP_*` isn't set, the server just logs what it would have sent to the console instead of
+emailing — the site still works fine, you just won't get notified by email until this is
+configured. Remember to add the same `SMTP_*` and `OWNER_EMAIL` variables in Render's
+**Environment** tab once you deploy (see Step B below).
+
+---
+
+## 3. Project structure & how to edit content
 
 Almost everything you'll want to change is in **plain data files**, not scattered across the UI:
 
@@ -73,7 +104,7 @@ change the backend data.
 
 ---
 
-## 3. Deploying — step by step
+## 4. Deploying — step by step
 
 You'll deploy the **backend to Render** and the **frontend to Vercel**, both from a single GitHub
 repo.
@@ -102,6 +133,7 @@ git push -u origin main
 4. Add environment variables (Render dashboard → Environment):
    - `JWT_SECRET` → any long random string
    - `CLIENT_ORIGIN` → your Vercel URL, e.g. `https://poprocks.vercel.app` (you can update this after Step C)
+   - `OWNER_EMAIL`, `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USER`, `SMTP_PASS` → same values as in `backend/.env` (see section 2 above), so enrollment/booking/contact emails work on the live site too
 5. Click **Create Web Service**. Render gives you a URL like `https://pop-rocks-backend.onrender.com`.
 
 > A `render.yaml` blueprint is included at the project root if you prefer **New → Blueprint** instead of setting fields manually.
@@ -150,7 +182,7 @@ forever, you'd only want a custom one for polish.
 
 ---
 
-## 4. If you want to add something later
+## 5. If you want to add something later
 
 - **New class/batch:** add an object to `DEFAULT_CLASSES` in `backend/db.js` (and mirror it in
   `frontend/src/data/fallback.js`), delete `backend/data/db.json`, restart the backend.
@@ -164,7 +196,7 @@ forever, you'd only want a custom one for polish.
 
 ---
 
-## 5. Tech stack summary
+## 6. Tech stack summary
 
 - React 19 + Vite + React Router
 - `framer-motion` for hero animation, `lucide-react` for icons
