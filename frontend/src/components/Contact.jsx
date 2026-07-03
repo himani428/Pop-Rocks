@@ -41,7 +41,7 @@ export default function Contact() {
             </a>
             <a href="mailto:muskanwadhwani1324@gmail.com">muskanwadhwani1324@gmail.com</a>
             <a href="tel:+918432341664">+91 84323 41664</a>
-            <span>Mathura, Uttar Pradesh</span>
+            <span>Kota, Rajasthan</span>
           </div>
         </div>
 
