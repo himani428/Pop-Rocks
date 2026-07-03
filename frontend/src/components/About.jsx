@@ -1,3 +1,4 @@
+import { IMAGES } from "../data/images";
 import "../styles/about.css";
 
 const PILLARS = [
@@ -21,7 +22,7 @@ export default function About() {
       <div className="container about-grid">
         <div className="about-photo">
           <img
-            src="https://images.pexels.com/photos/8853841/pexels-photo-8853841.jpeg?auto=compress&cs=tinysrgb&w=900"
+            src={IMAGES.about}
             alt="Dancer training in the studio"
           />
           <div className="about-photo-tag">

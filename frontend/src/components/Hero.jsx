@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { IMAGES } from "../data/images";
 import "../styles/hero.css";
 
 const ribbonText = "HIP HOP • BOLLYWOOD • CONTEMPORARY • KIDS DANCE • WEDDING & SANGEET CHOREO • ";
@@ -59,7 +60,7 @@ export default function Hero() {
         >
           <div className="hero-photo-frame">
             <img
-              src="https://images.pexels.com/photos/2820896/pexels-photo-2820896.jpeg?auto=compress&cs=tinysrgb&w=1000"
+              src={IMAGES.hero}
               alt="Dancer performing hip hop at an outdoor event"
             />
           </div>

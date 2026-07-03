@@ -73,3 +73,9 @@
   color: var(--text-on-ink-dim);
   max-width: 460px;
 }
+.services-footer-link {
+  color: var(--pop-cyan);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

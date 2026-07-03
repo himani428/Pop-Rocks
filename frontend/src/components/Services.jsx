@@ -24,6 +24,10 @@ export default function Services() {
     }).catch(() => {});
   }, []);
 
+  // Wedding planning (Pop Rocks Dance n Events) gets its own dedicated section
+  // right below this one — no need to show it twice.
+  const gridServices = services.filter((s) => s.id !== "wedding-planning");
+
   return (
     <section id="services" className="section services on-ink">
       <div className="container">
@@ -37,7 +41,7 @@ export default function Services() {
         </div>
 
         <div className="services-grid">
-          {services.map((s) => {
+          {gridServices.map((s) => {
             const Icon = ICONS[s.icon] || Sparkles;
             return (
               <div className="service-card" key={s.id}>
@@ -58,7 +62,10 @@ export default function Services() {
         </div>
 
         <div className="services-footer">
-          <p>Have something else in mind? We build custom choreography for almost any occasion.</p>
+          <p>
+            Planning a whole wedding, not just the choreography?{" "}
+            <a href="/#wedding-events" className="services-footer-link">See Pop Rocks Dance n Events ↓</a>
+          </p>
           <button className="btn btn-yellow" onClick={() => setShowGeneric(true)}>Plan a custom event</button>
         </div>
       </div>

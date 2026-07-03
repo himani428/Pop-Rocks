@@ -1,26 +1,27 @@
+import { IMAGES } from "../data/images";
 import "../styles/gallery.css";
 
 const PHOTOS = [
   {
-    src: "https://images.pexels.com/photos/2820896/pexels-photo-2820896.jpeg?auto=compress&cs=tinysrgb&w=800",
+    src: IMAGES.gallery[0],
     alt: "Breakdance performance at an outdoor street event",
     big: true
   },
   {
-    src: "https://images.pexels.com/photos/8853841/pexels-photo-8853841.jpeg?auto=compress&cs=tinysrgb&w=800",
+    src: IMAGES.gallery[1],
     alt: "Dancer stretching in the studio mirror"
   },
   {
-    src: "https://images.pexels.com/photos/6715556/pexels-photo-6715556.jpeg?auto=compress&cs=tinysrgb&w=800",
+    src: IMAGES.gallery[2],
     alt: "Children in a dance class with their instructor"
   },
   {
-    src: "https://images.pexels.com/photos/4714521/pexels-photo-4714521.jpeg?auto=compress&cs=tinysrgb&w=800",
+    src: IMAGES.gallery[3],
     alt: "Group performing a colorful celebration dance",
     big: true
   },
   {
-    src: "https://images.pexels.com/photos/6719004/pexels-photo-6719004.jpeg?auto=compress&cs=tinysrgb&w=800",
+    src: IMAGES.gallery[4],
     alt: "Kids practicing choreography together"
   }
 ];

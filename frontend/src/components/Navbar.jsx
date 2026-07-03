@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { label: "Classes", hash: "classes" },
   { label: "Trainers", hash: "trainers" },
   { label: "Services", hash: "services" },
+  { label: "Weddings", hash: "wedding-events" },
   { label: "Pricing", hash: "pricing" },
   { label: "Contact", hash: "contact" }
 ];

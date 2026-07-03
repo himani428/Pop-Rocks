@@ -18,6 +18,7 @@ export default function Footer() {
           <a href="/#classes">Classes</a>
           <a href="/#trainers">Trainers</a>
           <a href="/#services">Services</a>
+          <a href="/#wedding-events">Weddings</a>
           <a href="/#pricing">Pricing</a>
           <a href="/#gallery">Gallery</a>
         </div>

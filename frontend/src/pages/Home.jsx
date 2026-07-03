@@ -5,6 +5,7 @@ import About from "../components/About.jsx";
 import Classes from "../components/Classes.jsx";
 import Trainers from "../components/Trainers.jsx";
 import Services from "../components/Services.jsx";
+import WeddingEvents from "../components/WeddingEvents.jsx";
 import Pricing from "../components/Pricing.jsx";
 import Gallery from "../components/Gallery.jsx";
 import Testimonials from "../components/Testimonials.jsx";
@@ -27,6 +28,7 @@ export default function Home() {
       <Classes />
       <Trainers />
       <Services />
+      <WeddingEvents />
       <Pricing />
       <Gallery />
       <Testimonials />
